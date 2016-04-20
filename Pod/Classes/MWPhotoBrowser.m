@@ -983,12 +983,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     CGRect bounds = _pagingScrollView.bounds;
     CGRect pageFrame = bounds;
     pageFrame.size.width -= (2 * PADDING);
-    if((int)index < 0){
-        pageFrame.origin.x = (bounds.size.width * (int)index) + PADDING;
-    } else {
-        pageFrame.origin.x = (bounds.size.width * index) + PADDING;
-    }
-    
+    pageFrame.origin.x = (bounds.size.width * (int)index) + PADDING;
     return CGRectIntegral(pageFrame);
 }
 
