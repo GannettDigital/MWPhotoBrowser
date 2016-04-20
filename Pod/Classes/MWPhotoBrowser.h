@@ -41,7 +41,7 @@
 
 @interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate>
 
-// Mods by AML
+// --- Mods by AML
 - (void)playButtonTapped:(id)sender;
 - (CGSize)contentSizeForPagingScrollView;
 -(NSMutableSet*) getPages;
@@ -62,6 +62,8 @@
 - (void)selectedButtonTapped:(id)sender;
 - (CGRect)frameForPageAtIndex:(NSUInteger)index;
 - (id<MWPhoto>)photoAtIndex:(NSUInteger)index;
+@property (assign) BOOL viewIsActive;
+// ---- End mods
 
 @property (nonatomic, weak) IBOutlet id<MWPhotoBrowserDelegate> delegate;
 @property (nonatomic) BOOL zoomPhotosToFill;

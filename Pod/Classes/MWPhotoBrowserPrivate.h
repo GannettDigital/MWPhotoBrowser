@@ -66,7 +66,7 @@
     BOOL _leaveStatusBarAlone;
     BOOL _performingLayout;
     BOOL _rotating;
-    BOOL _viewIsActive; // active as in it's in the view heirarchy
+   // BOOL _viewIsActive; // active as in it's in the view heirarchy
     BOOL _didSavePreviousStateOfNavBar;
     BOOL _skipNextPagingScrollViewPositioning;
     BOOL _viewHasAppearedInitially;
