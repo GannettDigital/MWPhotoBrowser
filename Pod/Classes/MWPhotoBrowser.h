@@ -10,6 +10,7 @@
 #import "MWPhoto.h"
 #import "MWPhotoProtocol.h"
 #import "MWCaptionView.h"
+#import "MWZoomingScrollView.h"
 
 // Debug Logging
 #if 0 // Set to 1 to enable debug logging
@@ -39,6 +40,28 @@
 @end
 
 @interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate>
+
+// Mods by AML
+- (void)playButtonTapped:(id)sender;
+- (CGSize)contentSizeForPagingScrollView;
+-(NSMutableSet*) getPages;
+- (void)tilePages;
+- (NSUInteger)numberOfPhotos;
+#define PADDING                  10
+@property (strong, nonatomic) UIScrollView *pagingScrollView;
+@property (strong, nonatomic) NSMutableSet *visiblePages;
+@property (strong, nonatomic) NSMutableSet *recycledPages;
+- (BOOL)isDisplayingPageForIndex:(NSUInteger)index;
+- (MWZoomingScrollView *)dequeueRecycledPage;
+- (void)configurePage:(MWZoomingScrollView *)page forIndex:(NSUInteger)index;
+- (MWCaptionView *)captionViewForPhotoAtIndex:(NSUInteger)index;
+- (CGRect)frameForCaptionView:(MWCaptionView *)captionView atIndex:(NSUInteger)index;
+- (CGRect)frameForPlayButton:(UIButton *)playButton atIndex:(NSUInteger)index;
+- (CGRect)frameForSelectedButton:(UIButton *)selectedButton atIndex:(NSUInteger)index;
+- (BOOL)photoIsSelectedAtIndex:(NSUInteger)index;
+- (void)selectedButtonTapped:(id)sender;
+- (CGRect)frameForPageAtIndex:(NSUInteger)index;
+- (id<MWPhoto>)photoAtIndex:(NSUInteger)index;
 
 @property (nonatomic, weak) IBOutlet id<MWPhotoBrowserDelegate> delegate;
 @property (nonatomic) BOOL zoomPhotosToFill;

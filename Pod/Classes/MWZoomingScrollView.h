@@ -6,6 +6,7 @@
 //  Copyright 2010 d3i. All rights reserved.
 //
 
+#import <DACircularProgress/DACircularProgressView.h>
 #import <Foundation/Foundation.h>
 #import "MWPhotoProtocol.h"
 #import "MWTapDetectingImageView.h"
@@ -14,9 +15,11 @@
 @class MWPhotoBrowser, MWPhoto, MWCaptionView;
 
 @interface MWZoomingScrollView : UIScrollView <UIScrollViewDelegate, MWTapDetectingImageViewDelegate, MWTapDetectingViewDelegate> {
-
+    
 }
 
+@property (assign) BOOL alwaysDisplayLoadingIndicator;
+@property (strong, nonatomic) DACircularProgressView *loadingIndicator;
 @property () NSUInteger index;
 @property (nonatomic) id <MWPhoto> photo;
 @property (nonatomic, weak) MWCaptionView *captionView;
