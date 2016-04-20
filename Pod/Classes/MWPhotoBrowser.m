@@ -984,9 +984,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     CGRect pageFrame = bounds;
     pageFrame.size.width -= (2 * PADDING);
     if((int)index < 0){
-        int subIndex = -1;
-        pageFrame.origin.x = (bounds.size.width * subIndex) + PADDING;
-        NSLog(@"NEG");
+        pageFrame.origin.x = (bounds.size.width * (int)index) + PADDING;
     } else {
         pageFrame.origin.x = (bounds.size.width * index) + PADDING;
     }
