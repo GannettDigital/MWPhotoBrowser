@@ -63,6 +63,7 @@
 - (CGRect)frameForPageAtIndex:(NSUInteger)index;
 - (id<MWPhoto>)photoAtIndex:(NSUInteger)index;
 @property (assign) BOOL viewIsActive;
+@property (assign) NSUInteger currentPageIndex;
 // ---- End mods
 
 @property (nonatomic, weak) IBOutlet id<MWPhotoBrowserDelegate> delegate;
