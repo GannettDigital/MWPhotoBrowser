@@ -161,7 +161,7 @@
 
 // Image failed so just show black!
 - (void)displayImageFailure {
-    if(!self.alwaysDisplayLoadingIndicator){
+    if(!self.showLoadingIndicatorOnError){
         // Hide indicator
         [self hideLoadingIndicator];
     }

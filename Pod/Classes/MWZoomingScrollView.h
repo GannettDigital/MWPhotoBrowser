@@ -18,7 +18,7 @@
     
 }
 
-@property (assign) BOOL alwaysDisplayLoadingIndicator;
+@property (assign) BOOL showLoadingIndicatorOnError;
 @property (strong, nonatomic) DACircularProgressView *loadingIndicator;
 @property () NSUInteger index;
 @property (nonatomic) id <MWPhoto> photo;
