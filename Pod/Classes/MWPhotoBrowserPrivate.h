@@ -26,7 +26,7 @@
     
     // Paging & layout
     //	NSMutableSet *_visiblePages, *_recycledPages;
-   // NSUInteger _currentPageIndex;
+    // NSUInteger _currentPageIndex;
     NSUInteger _previousPageIndex;
     CGRect _previousLayoutBounds;
     NSUInteger _pageIndexBeforeRotation;
@@ -34,7 +34,8 @@
     // Navigation & controls
     UIToolbar *_toolbar;
     NSTimer *_controlVisibilityTimer;
-    UIBarButtonItem *_previousButton, *_nextButton, *_actionButton, *_doneButton;
+    //  UIBarButtonItem *_previousButton, *_nextButton, *_actionButton, *_doneButton;
+    UIBarButtonItem *_actionButton, *_doneButton;
     MBProgressHUD *_progressHUD;
     
     // Grid
@@ -66,7 +67,7 @@
     BOOL _leaveStatusBarAlone;
     BOOL _performingLayout;
     BOOL _rotating;
-   // BOOL _viewIsActive; // active as in it's in the view heirarchy
+    // BOOL _viewIsActive; // active as in it's in the view heirarchy
     BOOL _didSavePreviousStateOfNavBar;
     BOOL _skipNextPagingScrollViewPositioning;
     BOOL _viewHasAppearedInitially;

@@ -42,6 +42,8 @@
 @interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate>
 
 // --- Mods by AML
+@property (strong, nonatomic) UIBarButtonItem* nextButton;
+@property (strong, nonatomic) UIBarButtonItem* previousButton;
 - (void)playButtonTapped:(id)sender;
 - (CGSize)contentSizeForPagingScrollView;
 -(NSMutableSet*) getPages;
