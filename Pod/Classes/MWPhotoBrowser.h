@@ -64,6 +64,8 @@
 - (id<MWPhoto>)photoAtIndex:(NSUInteger)index;
 @property (assign) BOOL viewIsActive;
 @property (assign) NSUInteger currentPageIndex;
+- (void)gotoPreviousPage;
+- (void)gotoNextPage;
 // ---- End mods
 
 @property (nonatomic, weak) IBOutlet id<MWPhotoBrowserDelegate> delegate;

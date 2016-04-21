@@ -108,8 +108,8 @@
 // Navigation
 - (void)updateNavigation;
 - (void)jumpToPageAtIndex:(NSUInteger)index animated:(BOOL)animated;
-- (void)gotoPreviousPage;
-- (void)gotoNextPage;
+//- (void)gotoPreviousPage;
+//- (void)gotoNextPage;
 
 // Grid
 - (void)showGrid:(BOOL)animated;
