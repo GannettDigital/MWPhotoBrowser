@@ -42,6 +42,7 @@
 @interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate>
 
 // --- Mods by AML
+@property BOOL blockTile;
 @property (strong, nonatomic) UIBarButtonItem* nextButton;
 @property (strong, nonatomic) UIBarButtonItem* previousButton;
 - (void)playButtonTapped:(id)sender;

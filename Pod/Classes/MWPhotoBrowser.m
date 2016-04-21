@@ -534,6 +534,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     // Adjust video loading indicator if it's visible
     [self positionVideoLoadingIndicator];
     
+    NSLog(@"COP2");
     // Adjust contentOffset to preserve page location based on values collected prior to location
     _pagingScrollView.contentOffset = [self contentOffsetForPageAtIndex:indexPriorToLayout];
     [self didStartViewingPageAtIndex:_currentPageIndex]; // initial
@@ -767,6 +768,10 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 
 - (void)tilePages {
     
+    if(self.blockTile){
+        return;
+    }
+    
     // Calculate which pages should be visible
     // Ignore padding as paging bounces encroach on that
     // and lead to false page loads
@@ -976,6 +981,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 }
 
 - (CGRect)frameForPageAtIndex:(NSUInteger)index {
+    
     // We have to use our paging scroll view's bounds, not frame, to calculate the page placement. When the device is in
     // landscape orientation, the frame will still be in portrait because the pagingScrollView is the root view controller's
     // view, so its frame is in window coordinate space, which is never rotated. Its bounds, however, will be in landscape
