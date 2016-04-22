@@ -1049,7 +1049,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     // Checks
-    if (!_viewIsActive || _performingLayout || _rotating) return;
+    if (!_viewIsActive || _performingLayout || _rotating || self.blockTile) return;
     
     // Tile pages
     [self tilePages];
@@ -1060,10 +1060,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     if (index < 0) index = 0;
     if (index > [self numberOfPhotos] - 1) index = [self numberOfPhotos] - 1;
     NSUInteger previousCurrentPage = _currentPageIndex;
-    // Custom blocking to not retile on panning
-    if(self.blockTile){
-        return;
-    }
+   
     _currentPageIndex = index;
     if (_currentPageIndex != previousCurrentPage) {
         [self didStartViewingPageAtIndex:index];
