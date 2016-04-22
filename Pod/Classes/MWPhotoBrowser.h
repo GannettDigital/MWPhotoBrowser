@@ -42,6 +42,7 @@
 @interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate>
 
 // --- Mods by AML
+- (CGPoint)contentOffsetForPageAtIndex:(NSUInteger)index;
 @property BOOL blockTile;
 @property (strong, nonatomic) UIBarButtonItem* nextButton;
 @property (strong, nonatomic) UIBarButtonItem* previousButton;
