@@ -533,8 +533,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     
     // Adjust video loading indicator if it's visible
     [self positionVideoLoadingIndicator];
-    
-    NSLog(@"COP2");
+
     // Adjust contentOffset to preserve page location based on values collected prior to location
     _pagingScrollView.contentOffset = [self contentOffsetForPageAtIndex:indexPriorToLayout];
     [self didStartViewingPageAtIndex:_currentPageIndex]; // initial
