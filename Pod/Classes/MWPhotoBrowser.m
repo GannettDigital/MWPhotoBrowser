@@ -533,7 +533,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     
     // Adjust video loading indicator if it's visible
     [self positionVideoLoadingIndicator];
-
+    
     // Adjust contentOffset to preserve page location based on values collected prior to location
     _pagingScrollView.contentOffset = [self contentOffsetForPageAtIndex:indexPriorToLayout];
     [self didStartViewingPageAtIndex:_currentPageIndex]; // initial
@@ -1060,6 +1060,10 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     if (index < 0) index = 0;
     if (index > [self numberOfPhotos] - 1) index = [self numberOfPhotos] - 1;
     NSUInteger previousCurrentPage = _currentPageIndex;
+    // Custom blocking to not retile on panning
+    if(self.blockTile){
+        return;
+    }
     _currentPageIndex = index;
     if (_currentPageIndex != previousCurrentPage) {
         [self didStartViewingPageAtIndex:index];
